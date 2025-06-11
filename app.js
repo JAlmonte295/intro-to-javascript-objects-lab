@@ -49,8 +49,41 @@ Solve Exercise 4 here:
 */
 
 const starterPokemon = pokemon.filter((poke) => poke.starter === true);
-console.log(starterPokemon);
+// console.log(starterPokemon);
 
-game.party.push(starterPokemon);
+game.party.push(pokemon[0]);
 
 // console.log(game);
+
+/*
+Exercise 5
+1. Choose three more Pokémon from the `pokemon` array and add them to your party.
+2. Consider different attributes like 'type' or 'HP' for your selection. Which array method will you use to add them?
+
+
+Solve Exercise 5 here:
+*/
+
+game.party.push(pokemon[5],pokemon[60],pokemon[150]);
+
+// console.log(game);
+
+
+/*
+Exercise 6
+1. Set the `completed` property to true for gyms with a difficulty below 3.
+2. Think about how you'd loop through the `gyms` array to check and update the `completed` property.
+
+
+Solve Exercise 6 here:
+*/
+
+game.gyms.forEach((gym) => {
+    if (gym.difficulty <= 3) {
+        gym.completed = true;
+    }
+});
+
+console.log(game);
+
+
