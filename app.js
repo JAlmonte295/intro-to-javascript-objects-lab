@@ -20,6 +20,9 @@ const game = {
     { name: "rare candy", quantity: 99 },
   ],
   difficulty: [],
+  catchPokemon(pokemonObj) {
+    game.party.push(pokemonObj);
+},
 }
 
 // console.dir(pokemon, { maxArrayLength: null })
@@ -84,7 +87,7 @@ game.gyms.forEach((gym) => {
     }
 });
 
-console.log(game);
+// console.log(game);
 
 /*
 Exercise 7
@@ -137,3 +140,19 @@ pokemon.filter((poke) => {
     }
 });
 
+/*
+Exercise 10
+Create a method called `catchPokemon` and add it to the `game` object. You should not need to edit the original game object directly. This method should:
+  - Accept an object as a parameter called `pokemonObj`
+  - Add the `pokemonObj` to the `game.party` array.
+  - not return anything
+
+After writing this method, call it and pass in a Pokemon object of your choice from the `pokemon` data to catch it.
+
+Solve Exercise 10 here:
+*/
+
+game.catchPokemon(pokemon[0]);
+console.log(game.party);
+ // so basically we need to use the method to catch a pokemon from the data and into our party.
+ 
