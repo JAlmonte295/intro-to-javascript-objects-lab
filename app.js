@@ -115,3 +115,10 @@ Exercise 8
 Solve Exercise 8 here:
 */
 
+// const pokeNames = game.party.filter((poke) => poke.name);
+
+game.party.forEach((poke) => {
+    console.log(poke.name);
+});
+
+
