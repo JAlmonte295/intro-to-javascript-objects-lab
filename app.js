@@ -39,6 +39,11 @@ const game = {
     this.gymTally[1].incompleted = incompletedGyms.length;
 },
 
+  partyCount() {
+    const totalparty = this.party;
+    console.log("Total party: " + totalparty.length);
+  },
+
 }
 
 
@@ -229,5 +234,19 @@ Solve Exercise 13 here:
 game.gymStatus();
 
 
-console.log(game);
+// console.log(game);
 
+/*
+Exercise 14
+1. Add a `partyCount` method to `game` that counts the number of Pokémon in your party.
+
+This method should:
+  - Not accept any arguments.
+  - Count the number of Pokemon in the party.
+  - return the found number of Pokemon in the party.
+
+Solve Exercise 14 here:
+*/
+game.partyCount();
+
+console.log(game);
