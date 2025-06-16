@@ -29,15 +29,17 @@ const game = {
   ],
 
   catchPokemon(pokemonObj) {
-    if (this.party.length < 6) {
-    game.party.push(pokemonObj)
-    }
-    else {
-      game.collection.push(pokemonObj)
-    };
+    
     const pokeball = this.items.find(item => item.name === "pokeball");
-    if (pokeball) {
+    if (pokeball.quantity > 0) {
+      if (this.party.length < 6) {
+        game.party.push(pokemonObj);
+      } else {
+        game.collection.push(pokemonObj)
+      }
       pokeball.quantity -= 1;
+    } else {
+      console.log("No more Pokeballs!")
     };
 },
 
@@ -305,5 +307,22 @@ Solve Exercise 18 here:
 
 game.catchPokemon(pokemon[75]);
 
+/*
+Exercise 19
+Copy the `catchPokemon` method that you just wrote above, and paste it below. The time has come to make it so that we cannot catch a Pokemon when we do not have any pokeballs to catch it with. 
+
+Modify the method so that if there are no pokeballs a message will be displayed that there are not enough pokeballs to catch the desired Pokemon.
+
+Also, ensure that the Pokemon isn't added to the `game.party` or the `game.collection`.
+
+Solve Exercise 19 here:
+*/
+
+game.catchPokemon(pokemon[81]);
+game.catchPokemon(pokemon[100]);
+game.catchPokemon(pokemon[120]);
+game.catchPokemon(pokemon[50]);
+game.catchPokemon(pokemon[30]);
+// game.catchPokemon(pokemon[23]);
 console.log(game);
 
