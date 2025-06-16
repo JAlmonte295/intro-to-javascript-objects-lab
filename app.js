@@ -323,6 +323,7 @@ game.catchPokemon(pokemon[100]);
 game.catchPokemon(pokemon[120]);
 game.catchPokemon(pokemon[50]);
 game.catchPokemon(pokemon[30]);
-// game.catchPokemon(pokemon[23]);
-console.log(game);
+game.catchPokemon(pokemon[23]);
+console.log(game.items);
+
 
