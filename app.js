@@ -46,12 +46,7 @@ const game = {
 
 }
 
-
 // console.dir(pokemon, { maxArrayLength: null })
-
-console.log(pokemon[58].name);
-
-// console.log(game)
 
 /*
 Exercise 3
@@ -73,13 +68,7 @@ Exercise 4
 Solve Exercise 4 here:
 */
 
-const starterPokemon = pokemon.filter((poke) => poke.starter === true);
-
-// console.log(starterPokemon);
-
 game.party.push(pokemon[0]);
-
-// console.log(game);
 
 /*
 Exercise 5
@@ -91,8 +80,6 @@ Solve Exercise 5 here:
 */
 
 game.party.push(pokemon[5],pokemon[60],pokemon[150]);
-
-// console.log(game);
 
 
 /*
@@ -173,7 +160,8 @@ After writing this method, call it and pass in a Pokemon object of your choice f
 Solve Exercise 10 here:
 */
 
-game.catchPokemon(pokemon[0]);
+
+game.catchPokemon(pokemon[100]);
 
  // so basically we need to use the method to catch a pokemon from the data and into our party.
  
@@ -191,6 +179,7 @@ Solve Exercise 11 here:
 */
 
 game.catchPokemon(pokemon[25]);
+console.log(game.items);
 
 /*
 Exercise 12
@@ -249,4 +238,29 @@ Solve Exercise 14 here:
 */
 game.partyCount();
 
+/*
+Exercise 15
+1. Now, complete gyms with a difficulty below 8. Reflect on how this is similar to or different from the previous gym exercises.
+(change the value of `complete` in the qualifying objects from false to true).
+
+Solve Exercise 15 here:
+*/
+
+game.gyms.forEach((gym) => {
+  if (gym.difficulty <= 8) {
+    gym.completed = true;
+  }
+});
+// not sure if this is a trick question but were using the same formula to change the value, not sure how its any different, but I guess now all of them a true so the same is technically completed.
+
+
+/*
+Exercise 16
+1. Log the entire `game` object to the console. Take a moment to review the changes you've made throughout the exercises.
+
+
+Solve Exercise 16 here:
+*/
+
 console.log(game);
+
