@@ -24,14 +24,23 @@ const game = {
     { completed: 0 },
     { incompleted: 0 },
   ],
+  collection: [
+
+  ],
 
   catchPokemon(pokemonObj) {
-    game.party.push(pokemonObj);
+    if (this.party.length < 6) {
+    game.party.push(pokemonObj)
+    }
+    else {
+      game.collection.push(pokemonObj)
+    };
     const pokeball = this.items.find(item => item.name === "pokeball");
     if (pokeball) {
       pokeball.quantity -= 1;
-    }
+    };
 },
+
   gymStatus() {
     const completedGyms = this.gyms.filter((gym) => gym.completed === true);
     const incompletedGyms = this.gyms.filter((gym) => gym.completed === false);
@@ -261,6 +270,40 @@ Exercise 16
 
 Solve Exercise 16 here:
 */
+
+// console.log(game);
+
+/*
+Exercise 17
+1. Arrange the Pokémon in `game.party` by their HP. The one with the highest HP should come first.
+2. You'll need to use the `.sort()` method. How does the compare function work in sorting numbers?
+
+
+Solve Exercise 17 here:
+*/
+game.party.sort((poke1, poke2) => poke2.hp - poke1.hp);
+console.log(game.party);
+
+/*
+Exercise 18
+Add a new property to the `game` object called `collection` and initialize its value to an empty array.
+
+Copy the `catchPokemon` method you wrote in Exercise Twelve and paste it below. Modify it so that:
+  - Ensure that no more than six Pokemon can be in the party at any time. 
+    Excess Pokemon should be placed in the `game.collection` array.
+  - It's up to you how to distribute Pokemon in a situation where more than six 
+    would be placed into the `game.party` array.
+
+Again, for this exercise, it's okay to have a negative number of pokeballs.
+
+After updating the method, use it by calling it and passing in a pokemon object of your choice from the `pokemon` data to catch it.
+
+Also, log the `game.items` array to confirm that the pokeball quantity is being decremented.
+
+Solve Exercise 18 here:
+*/
+
+game.catchPokemon(pokemon[75]);
 
 console.log(game);
 
