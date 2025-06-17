@@ -21,8 +21,7 @@ const game = {
   ],
   difficulty: [],
   gymTally: [
-    { completed: 0 },
-    { incompleted: 0 },
+    { completed: 0, incompleted: 0 },
   ],
   collection: [
 
@@ -44,10 +43,10 @@ const game = {
 },
 
   gymStatus() {
-    const completedGyms = this.gyms.filter((gym) => gym.completed === true);
+    const completedGyms = this.gyms.filter((gym) => gym.completed === true); 
     const incompletedGyms = this.gyms.filter((gym) => gym.completed === false);
     this.gymTally[0].completed = completedGyms.length;
-    this.gymTally[1].incompleted = incompletedGyms.length;
+    this.gymTally[0].incompleted = incompletedGyms.length;
 },
 
   partyCount() {
@@ -127,7 +126,8 @@ More Hints: The existing starter Pokemon will be *replaced* in your party with t
 Solve Exercise 7 here:
 */
 
-game.party.splice(pokemon[0],1,pokemon[1]);
+game.party.splice(0,1,pokemon[1]); //fixed the splice method
+// console.log(game.party);
 
 /*
 Exercise 8
@@ -231,7 +231,7 @@ For example, if five gym objects have a value of `true` on their `completed` pro
 Solve Exercise 13 here:
 */
 
-game.gymStatus();
+// game.gymStatus();
 
 
 // console.log(game);
@@ -262,6 +262,9 @@ game.gyms.forEach((gym) => {
     gym.completed = true;
   }
 });
+game.gymStatus();
+
+
 // not sure if this is a trick question but were using the same formula to change the value, not sure how its any different, but I guess now all of them a true so the same is technically completed.
 
 
@@ -326,4 +329,19 @@ game.catchPokemon(pokemon[30]);
 game.catchPokemon(pokemon[23]);
 console.log(game.items);
 
+/*
+Exercise 20
+Copy the `catchPokemon` method that you just wrote above, and paste it below. Modify is so that you can just pass in the name of a Pokemon instead of an entire object, and the method will look up the Pokemon from the data set for you.
+
+The string passed in should be allowed to be any case (for example, if the string 'PiKacHU' is passed to the function, it should match to 'Pikachu' in the data set). 
+
+If there is not a match, then return a string noting that the selected Pokemon does not exist. Ensure you do not decrement the pokeball count if an invalid Pokemon name is passed in, and also ensure that the Pokemon isn't added to the `game.party` or the `game.collection`.
+
+Solve Exercise 20 here:
+*/
+
+
+// add another find method for a name kinda like the pokeball items.
+
+console.log(game.gymTally);
 
